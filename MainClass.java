@@ -83,6 +83,19 @@ public class MainClass {
 
     }
 
+    public static void countGeneral2(int[] arr) {
+        if (arr.length == 0)
+            return;
+        int[] uniqueArr = Arrays.stream(arr).distinct().toArray();
+        for (int i = 0; i < uniqueArr.length; i++) {
+            int count = 0;
+            for (int j = 0; j < arr.length; j++)
+                if (uniqueArr[i] == arr[j])
+                    count++;
+            System.out.println(uniqueArr[i] + " -> " + count);
+        }
+
+    }
     public static int binarySearch(int[] arr, int value) {
         int start = 0;
         int end = arr.length;
